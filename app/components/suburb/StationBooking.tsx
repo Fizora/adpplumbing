@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LuChevronDown, LuCircleCheck, LuPhone } from "react-icons/lu";
 import {
   contactInfo,
@@ -8,7 +8,7 @@ import {
   type SuburbPageData,
 } from "@/app/const/data";
 import type { Station } from "@/app/const/suburb";
-import { uiByLang } from "@/app/const/ui";
+import { uiByLang, suburbUiByLang } from "@/app/const/ui";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 interface StationBookingProps {
@@ -24,42 +24,44 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
   const { lang } = useLanguage();
   const { booking } = landingContentByLang[lang];
   const ui = uiByLang[lang];
+  const suburbUi = suburbUiByLang[lang];
 
   const [submitted, setSubmitted] = useState(false);
   const [showMore, setShowMore] = useState(false);
+
+  // PERBAIKAN: Simpan index (angka) alih-alih string
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    suburb: station.coverage[0],
-    service: booking.serviceOptions[0],
-    urgency: booking.urgencyOptions[0],
+    suburbIndex: 0,
+    serviceIndex: 0,
+    urgencyIndex: 0,
     notes: "",
   });
 
-  // Saat bahasa berganti, opsi layanan/urgensi ikut berganti
-  useEffect(() => {
-    setFormData((prev) => ({
-      ...prev,
-      service: booking.serviceOptions[0],
-      urgency: booking.urgencyOptions[0],
-    }));
-  }, [lang, booking.serviceOptions, booking.urgencyOptions]);
+  // Ambil nilai string asli berdasarkan index dan bahasa yang aktif saat ini
+  const selectedSuburb =
+    station.coverage[formData.suburbIndex] || station.coverage[0];
+  const selectedService =
+    booking.serviceOptions[formData.serviceIndex] || booking.serviceOptions[0];
+  const selectedUrgency =
+    booking.urgencyOptions[formData.urgencyIndex] || booking.urgencyOptions[0];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: POST ke /api/booking dengan
-    // { ...formData, unit: station.callsign, station: station.slug }
-    // supaya request masuk ke antrean armada yang bertugas di area ini.
+    // { ...formData, suburb: selectedSuburb, service: selectedService, urgency: selectedUrgency, unit: station.callsign }
     setSubmitted(true);
   };
 
-  const update =
-    (key: keyof typeof formData) =>
-    (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-      >,
-    ) =>
+  const updateIndex =
+    (key: "suburbIndex" | "serviceIndex" | "urgencyIndex") =>
+    (e: React.ChangeEvent<HTMLSelectElement>) =>
+      setFormData({ ...formData, [key]: Number(e.target.value) });
+
+  const updateText =
+    (key: "name" | "phone" | "notes") =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setFormData({ ...formData, [key]: e.target.value });
 
   return (
@@ -67,30 +69,31 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
       <div className="container-x grid gap-14 lg:grid-cols-12 lg:gap-20">
         <div className="lg:col-span-5">
           <h2 className="heading-light text-4xl text-ink sm:text-5xl">
-            Book the {suburb.name} unit
+            {suburbUi.bookUnit.replace("{name}", suburb.name)}
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-            Your request goes straight to the {station.unitName}, based at{" "}
-            {station.base}. Expect a call or SMS within 10 minutes.
+            {suburbUi.requestGoesTo
+              .replace("{unitName}", station.unitName)
+              .replace("{base}", station.base)}
           </p>
 
           <dl className="mt-10 divide-y divide-line border-y border-line text-sm">
             <div className="grid grid-cols-[8rem_1fr] gap-4 py-4">
-              <dt className="text-muted">Unit</dt>
+              <dt className="text-muted">{suburbUi.unit}</dt>
               <dd className="font-medium text-ink">
                 {station.unitName} ({station.callsign})
               </dd>
             </div>
             <div className="grid grid-cols-[8rem_1fr] gap-4 py-4">
-              <dt className="text-muted">Typical arrival</dt>
+              <dt className="text-muted">{suburbUi.typicalArrival}</dt>
               <dd className="font-medium text-ink">{suburb.responseEta}</dd>
             </div>
             <div className="grid grid-cols-[8rem_1fr] gap-4 py-4">
-              <dt className="text-muted">Covers</dt>
+              <dt className="text-muted">{suburbUi.covers}</dt>
               <dd className="text-ink">{station.coverage.join(", ")}</dd>
             </div>
             <div className="grid grid-cols-[8rem_1fr] gap-4 py-4">
-              <dt className="text-muted">On the van</dt>
+              <dt className="text-muted">{suburbUi.onTheVan}</dt>
               <dd className="text-ink">{station.equipment.join(", ")}</dd>
             </div>
           </dl>
@@ -121,13 +124,16 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                 <span className="font-semibold text-ink">{formData.phone}</span>{" "}
                 {booking.successState.desc2}{" "}
                 <span className="font-semibold text-ink">
-                  {formData.service}
+                  {/* Gunakan string yang sudah di-derive dari index */}
+                  {selectedService}
                 </span>
                 .
               </p>
               <p className="mt-3 text-sm text-muted">
-                Dispatched to {station.unitName} ({station.callsign}) for{" "}
-                {formData.suburb}.
+                {suburbUi.dispatchedTo
+                  .replace("{unitName}", station.unitName)
+                  .replace("{callsign}", station.callsign)
+                  .replace("{suburb}", selectedSuburb)}
               </p>
               <button
                 type="button"
@@ -156,7 +162,7 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                     autoComplete="name"
                     placeholder={booking.formLabels.namePlaceholder}
                     value={formData.name}
-                    onChange={update("name")}
+                    onChange={updateText("name")}
                     className={field}
                   />
                 </div>
@@ -173,7 +179,7 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                     autoComplete="tel"
                     placeholder={booking.formLabels.phonePlaceholder}
                     value={formData.phone}
-                    onChange={update("phone")}
+                    onChange={updateText("phone")}
                     className={field}
                   />
                 </div>
@@ -184,12 +190,12 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                   </label>
                   <select
                     id="station-suburb"
-                    value={formData.suburb}
-                    onChange={update("suburb")}
+                    value={formData.suburbIndex}
+                    onChange={updateIndex("suburbIndex")}
                     className={field}
                   >
-                    {station.coverage.map((name) => (
-                      <option key={name} value={name}>
+                    {station.coverage.map((name, idx) => (
+                      <option key={name} value={idx}>
                         {name} {suburb.postcode}
                       </option>
                     ))}
@@ -202,12 +208,12 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                   </label>
                   <select
                     id="station-service"
-                    value={formData.service}
-                    onChange={update("service")}
+                    value={formData.serviceIndex}
+                    onChange={updateIndex("serviceIndex")}
                     className={field}
                   >
-                    {booking.serviceOptions.map((option) => (
-                      <option key={option} value={option}>
+                    {booking.serviceOptions.map((option, idx) => (
+                      <option key={option} value={idx}>
                         {option}
                       </option>
                     ))}
@@ -243,12 +249,12 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                       </label>
                       <select
                         id="station-urgency"
-                        value={formData.urgency}
-                        onChange={update("urgency")}
+                        value={formData.urgencyIndex}
+                        onChange={updateIndex("urgencyIndex")}
                         className={field}
                       >
-                        {booking.urgencyOptions.map((option) => (
-                          <option key={option} value={option}>
+                        {booking.urgencyOptions.map((option, idx) => (
+                          <option key={option} value={idx}>
                             {option}
                           </option>
                         ))}
@@ -264,7 +270,7 @@ const StationBooking = ({ suburb, station }: StationBookingProps) => {
                         rows={3}
                         placeholder={booking.formLabels.notesPlaceholder}
                         value={formData.notes}
-                        onChange={update("notes")}
+                        onChange={updateText("notes")}
                         className={`${field} resize-none`}
                       />
                     </div>

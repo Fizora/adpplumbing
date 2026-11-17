@@ -1,17 +1,28 @@
+"use client"; // Pastikan ini ada di paling atas
+
 import Image from "next/image";
 import Link from "next/link";
 import { LuArrowUpRight, LuPhone, LuStar } from "react-icons/lu";
-import { contactInfo, suburbPages } from "@/app/const/data";
-import { getStation, getSuburb } from "@/app/const/suburb";
+import { contactInfo, suburbPagesByLang } from "@/app/const/data";
+import { stationsByLang } from "@/app/const/suburb";
+import { suburbUiByLang } from "@/app/const/ui";
+import { useLanguage } from "@/app/context/LanguageContext";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import ClickToCall from "@/app/components/ClickToCall";
 import StationBooking from "@/app/components/suburb/StationBooking";
 
 const SuburbTemplate = ({ slug }: { slug: string }) => {
-  const suburb = getSuburb(slug);
-  const station = getStation(slug);
-  const others = suburbPages.filter((s) => s.slug !== slug);
+  const { lang } = useLanguage();
+
+  // Ambil data sesuai bahasa aktif
+  const suburbs = suburbPagesByLang[lang];
+  const stations = stationsByLang[lang];
+  const ui = suburbUiByLang[lang];
+
+  const suburb = suburbs.find((s) => s.slug === slug) || suburbs[0]; // Fallback
+  const station = stations.find((s) => s.slug === slug) || stations[0]; // Fallback
+  const others = suburbs.filter((s) => s.slug !== slug);
   const review = suburb.localReview;
 
   return (
@@ -27,13 +38,13 @@ const SuburbTemplate = ({ slug }: { slug: string }) => {
                   <ol className="flex flex-wrap items-center gap-x-2">
                     <li>
                       <Link href="/" className="hover:text-ink">
-                        Home
+                        {ui.home}
                       </Link>
                     </li>
                     <li aria-hidden="true">/</li>
                     <li>
                       <Link href="/#suburb" className="hover:text-ink">
-                        Service areas
+                        {ui.serviceAreas}
                       </Link>
                     </li>
                     <li aria-hidden="true">/</li>
@@ -56,14 +67,14 @@ const SuburbTemplate = ({ slug }: { slug: string }) => {
                     href="#booking"
                     className="inline-flex items-center justify-center rounded-full bg-marine px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-marine-hover"
                   >
-                    Book the {station.unitName}
+                    {ui.bookUnit.replace("{name}", suburb.name)}
                   </Link>
                   <a
                     href={`tel:${contactInfo.phone}`}
                     className="inline-flex items-center justify-center gap-2.5 px-2 py-3 text-base font-medium text-ink underline decoration-line decoration-2 underline-offset-8 transition-colors hover:decoration-copper"
                   >
                     <LuPhone className="text-copper" />
-                    Call {contactInfo.displayPhone}
+                    {contactInfo.displayPhone}
                   </a>
                 </div>
               </div>
@@ -90,19 +101,19 @@ const SuburbTemplate = ({ slug }: { slug: string }) => {
 
             <dl className="mt-16 grid gap-6 border-t border-line pt-6 sm:grid-cols-3 sm:gap-8">
               <div>
-                <dt className="text-sm text-muted">Typical arrival</dt>
+                <dt className="text-sm text-muted">{ui.typicalArrival}</dt>
                 <dd className="mt-1 text-2xl font-light tracking-tight text-ink">
                   {suburb.responseEta}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm text-muted">Dispatch unit</dt>
+                <dt className="text-sm text-muted">{ui.dispatchUnit}</dt>
                 <dd className="mt-1 text-2xl font-light tracking-tight text-ink">
                   {station.unitName}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm text-muted">Based at</dt>
+                <dt className="text-sm text-muted">{ui.basedAt}</dt>
                 <dd className="mt-1 text-2xl font-light tracking-tight text-ink">
                   {station.base}
                 </dd>
@@ -160,14 +171,14 @@ const SuburbTemplate = ({ slug }: { slug: string }) => {
           </div>
         </section>
 
-        {/* Booking langsung ke unit di area ini */}
+        {/* Booking */}
         <StationBooking suburb={suburb} station={station} />
 
         {/* Area lain */}
         <section className="bg-marine py-16 text-mist sm:py-20">
           <div className="container-x">
             <h2 className="text-2xl font-light tracking-tight text-white sm:text-3xl">
-              Other service areas
+              {ui.otherAreas}
             </h2>
             <div className="mt-8 grid border-t border-white/15 sm:grid-cols-3">
               {others.map((s, i) => (

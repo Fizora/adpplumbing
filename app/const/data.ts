@@ -2268,3 +2268,575 @@ export const landingContentByLang: Record<LangCode, LandingContentType> = {
   th: thContent,
   vi: viContent,
 };
+
+// Pastikan import ini ada di paling atas data.ts:
+// import { LangCode } from "@/app/context/LanguageContext";
+
+export const suburbPagesByLang: Record<LangCode, SuburbPageData[]> = {
+  en: suburbPages,
+
+  // ─────────────────────────────────────────────────────────────
+  // INDONESIAN (ID)
+  // ─────────────────────────────────────────────────────────────
+  id: [
+    {
+      ...suburbPages[0], // Parramatta
+      region: "Sydney Barat",
+      responseEta: "35 Menit",
+      metaTitle: "Tukang Ledeng Darurat 24/7 Parramatta (2150) | ADP Plumbing",
+      metaDescription:
+        "Tukang ledeng berlisensi cepat di Parramatta 2150. Pembersihan saluran mampet hari yang sama, perbaikan pipa pecah, dan pemasangan air panas dengan biaya panggilan $0.",
+      badge: "Van Parramatta Siaga • ETA 35 Menit",
+      heroTitle: "Tukang Ledeng Darurat 24/7 Terpercaya di Parramatta",
+      heroDescription:
+        "Mengalami saluran air mampet, pipa pecah, atau air panas mati di Parramatta (2150)? Truk ledeng Sydney Barat kami bersiaga beberapa menit dari Church Street untuk pengiriman cepat di hari yang sama dengan harga tetap.",
+      localAngleTitle: "Solusi Perpipaan Khusus untuk Rumah & Unit Parramatta",
+      localAngleDescription:
+        "Dari pondok warisan federasi dekat Parramatta Park hingga apartemen bertingkat di tepi sungai, kami memahami perpipaan, intrusi akar pohon, dan masalah tekanan air strata yang umum di 2150.",
+      commonLocalIssues: [
+        "Intrusi akar pohon di saluran pembuangan tanah liat tua di sekitar North Parramatta",
+        "Penggantian sistem air panas yang sesuai strata di apartemen bertingkat",
+        "Regulasi katup tekanan air tinggi & perbaikan selang fleksibel pecah",
+      ],
+      localLandmarkNote:
+        "Pengiriman cepat meliputi Parramatta CBD, North Parramatta, Harris Park, dan Westmead.",
+      localReview: {
+        ...suburbPages[0].localReview,
+        text: "Saluran air halaman belakang kami meluap pada Minggu pagi. ADP Plumbing tiba dalam 30 menit, memasang kamera CCTV, membersihkan akar pohon, dan menagih biaya tetap persis seperti yang dikutip.",
+      },
+    },
+    {
+      ...suburbPages[1], // Chatswood
+      region: "Sydney Utara Bawah",
+      responseEta: "40 Menit",
+      metaTitle:
+        "Tukang Ledeng Berlisensi Chatswood (2067) | Air Panas & Saluran Mampet",
+      metaDescription:
+        "Butuh tukang ledeng darurat di Chatswood 2067? ADP Plumbing memberikan harga tetap untuk pelapisan pipa, pemasangan gas, dan perbaikan air panas di North Shore.",
+      badge: "Pengiriman North Shore • ETA 40 Menit",
+      heroTitle: "Tukang Ledeng Residensial Cepat & Bersih di Chatswood",
+      heroDescription:
+        "Melayani pemilik rumah dan pengelola strata Chatswood (2067) dengan deteksi kebocoran presisi, upgrade air panas aliran kontinu, dan pelapisan pipa tanpa galian—didukung garansi harga 100% di awal.",
+      localAngleTitle: "Melindungi Properti North Shore Tanpa Membongkar Taman",
+      localAngleDescription:
+        "Jalanan berdaun dan rumah-rumah mapan di Chatswood rentan terhadap kerusakan pipa air hujan dan saluran pembuangan akibat akar. Kami menggunakan pelapisan pipa tanpa galian untuk memulihkan saluran tanpa menggali jalan masuk atau halaman Anda.",
+      commonLocalIssues: [
+        "Pelapisan pipa tanpa galian untuk pipa tembikar yang rusak akibat akar",
+        "Pemasangan air panas gas aliran kontinu Rheem & Rinnai",
+        "Deteksi kebocoran termal akustik di balik dinding kamar mandi berkeramik",
+      ],
+      localLandmarkNote:
+        "Melayani Chatswood, Chatswood West, Roseville, dan Willoughby tanpa biaya tambahan.",
+      localReview: {
+        ...suburbPages[1].localReview,
+        text: "Tangki air lama kami pecah semalaman. ADP Plumbing memasang unit gas kontinu Rinnai baru sebelum jam makan siang. Pembersihan sangat rapi dan teknisinya ramah.",
+      },
+    },
+    {
+      ...suburbPages[2], // Bondi
+      region: "Suburb Timur",
+      responseEta: "30 Menit",
+      metaTitle:
+        "Tukang Ledeng Darurat Bondi (2026) | Ahli Korosi Udara Asin & Saluran",
+      metaDescription:
+        "Tukang ledeng lokal 24/7 di Bondi 2026. Ahli dalam perpipaan berkarat akibat udara asin pesisir, saluran apartemen mampet, dan perbaikan kebocoran mendesak.",
+      badge: "Unit Seluler Suburb Timur • ETA 30 Menit",
+      heroTitle: "Tukang Ledeng Pesisir Hari yang Sama di Bondi & Bondi Beach",
+      heroDescription:
+        "Udara asin pesisir dan perpipaan teras tua memerlukan penanganan khusus. Tukang ledeng Bondi (2026) kami tiba dengan perlengkapan kuningan kelas marine, jet tekanan tinggi, dan kamera kebocoran termal untuk memperbaiki masalah pada kunjungan pertama.",
+      localAngleTitle:
+        "Dirancang untuk Udara Asin Pesisir & Teras Warisan Bondi",
+      localAngleDescription:
+        "Properti di dekat Bondi Beach dan Campbell Parade mengalami korosi dipercepat pada pipa tembaga luar ruangan, saluran gas, dan katup air panas. Kami memasang fitting tahan korosi yang dirancang untuk bertahan di kondisi pesisir.",
+      commonLocalIssues: [
+        "Katup air panas luar ruangan & pipa tembaga berkarat akibat udara asin",
+        "Saluran dapur & kamar mandi mampet di apartemen pesisir",
+        "Penutupan pipa pecah darurat dan laporan kepatuhan strata",
+      ],
+      localLandmarkNote:
+        "Respons lokal cepat di Bondi Beach, North Bondi, Bondi Junction, dan Tamarama.",
+      localReview: {
+        ...suburbPages[2].localReview,
+        text: "Udara asin melubangi katup utama air luar ruangan kami. ADP Plumbing datang kurang dari 30 menit, mengganti bagian tembaga korosi dengan kuningan kelas marine, dan tidak meninggalkan kotoran.",
+      },
+    },
+    {
+      ...suburbPages[3], // Cronulla
+      region: "Sutherland Shire",
+      responseEta: "45 Menit",
+      metaTitle:
+        "Tukang Ledeng Cronulla (2230) | Saluran Mampet & Pemasangan Gas 24/7",
+      metaDescription:
+        "Tukang ledeng Sutherland Shire andal di Cronulla 2230. Harga tetap di awal untuk saluran air hujan mampet, titik BBQ gas, dan perbaikan pipa darurat.",
+      badge: "Unit Cepat Sutherland Shire • ETA 45 Menit",
+      heroTitle: "Tukang Ledeng Lokal Andal di Cronulla & The Shire",
+      heroDescription:
+        "Dari unit tepi pantai dekat The Esplanade hingga rumah keluarga di South Cronulla (2230), ADP Plumbing memberikan layanan perpipaan dan pemasangan gas yang jujur dan tepat waktu tanpa biaya panggilan tersembunyi.",
+      localAngleTitle:
+        "Ahli Air Hujan, Saluran Pembuangan & Gas untuk Rumah Cronulla",
+      localAngleDescription:
+        "Hujan lebat pesisir dan pergeseran tanah berpasir dapat dengan cepat membanjiri pit air hujan dan persimpangan saluran pembuangan di Cronulla. Kami membersihkan penyumbatan pasir dan akar dengan cepat serta mensertifikasi instalasi gas luar ruangan.",
+      commonLocalIssues: [
+        "Saluran air hujan tersumbat pasir dan pembersihan pit pencegah banjir pesisir",
+        "Pemasangan bayonet gas alam & LPG berlisensi untuk hiburan luar ruangan",
+        "Tangki toilet bocor, upgrade keran, dan perbaikan pipa talang atap",
+      ],
+      localLandmarkNote:
+        "Meliputi Cronulla, Woolooware, Caringbah, dan Miranda dengan penawaran harga tetap.",
+      localReview: {
+        ...suburbPages[3].localReview,
+        text: "Pria jujur yang benar-benar tepat waktu. Membersihkan saluran air hujan yang tersumbat pasir dan memasang titik gas baru di dek belakang dalam satu kunjungan. Harga wajar dan pengerjaan jempolan.",
+      },
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────
+  // JAPANESE (JA)
+  // ─────────────────────────────────────────────────────────────
+  ja: [
+    {
+      ...suburbPages[0], // Parramatta
+      region: "西シドニー",
+      responseEta: "35分",
+      metaTitle: "パラマッタ（2150）24時間365日緊急配管工 | ADP Plumbing",
+      metaDescription:
+        "パラマッタ2150の迅速な公認配管工。当日の排水管詰まり解消、破裂管の修理、給湯器の設置、出張費$0。",
+      badge: "パラマッタ専用バン待機中 • 到着まで35分",
+      heroTitle: "パラマッタで信頼される24時間365日緊急配管工",
+      heroDescription:
+        "パラマッタ（2150）で排水管の詰まり、配管の破裂、お湯が出ないなどのトラブルでお困りですか？西シドニーの配管トラックがチャーチストリートから数分の場所に待機しており、固定価格で迅速に駆けつけます。",
+      localAngleTitle: "パラマッタの住宅やユニットに合わせた配管ソリューション",
+      localAngleDescription:
+        "パラマッタパーク近くの歴史ある連邦様式のコテージから、リバーフロント沿いの高層アパートまで、2150エリアでよくある配管、木の根の侵入、ストラタの水圧問題を熟知しています。",
+      commonLocalIssues: [
+        "ノースパラマッタ周辺の古い粘土質下水管への木の根の侵入",
+        "高層アパートでのストラタ基準に準拠した給湯器の交換",
+        "高水圧バルブの調整とフレキシホースの破裂修理",
+      ],
+      localLandmarkNote:
+        "パラマッタCBD、ノースパラマッタ、ハリスパーク、ウェストミードをカバーする迅速な配車。",
+      localReview: {
+        ...suburbPages[0].localReview,
+        text: "日曜日の朝に裏庭の排水管が溢れました。ADP Plumbingは30分で到着し、CCTVカメラを配管に通し、ハイドロジェッターで木の根を除去し、見積もり通りの固定料金を請求しました。",
+      },
+    },
+    {
+      ...suburbPages[1], // Chatswood
+      region: "ローワー・ノースショア",
+      responseEta: "40分",
+      metaTitle: "チャッツウッド（2067）公認配管工 | 給湯器と排水管詰まり",
+      metaDescription:
+        "チャッツウッド2067で緊急配管工をお探しですか？ADP Plumbingはノースショア全域で固定価格のパイプライニング、ガス設備、給湯修理を提供します。",
+      badge: "ローワー・ノースショア配車 • 到着まで40分",
+      heroTitle: "チャッツウッドの迅速でクリーンな住宅配管工",
+      heroDescription:
+        "チャッツウッド（2067）の住宅所有者やストラタマネージャーに、精密な漏水探知、連続流給湯器のアップグレード、非開削パイプライニングを提供—100%の事前価格保証付き。",
+      localAngleTitle: "庭を掘り起こさずにノースショアの物件を保護",
+      localAngleDescription:
+        "チャッツウッドの緑豊かな通りや歴史ある家屋は、根による雨水管や下水管の損傷を受けやすいです。私たちは非開削パイプライニングを使用し、車道や庭を掘り起こさずに破損した排水管を修復します。",
+      commonLocalIssues: [
+        "根で損傷した陶器管の非開削パイプライニング",
+        "リーム＆リンナイの連続流ガス給湯器の設置",
+        "タイル張り浴室の壁裏の音響熱漏水探知",
+      ],
+      localLandmarkNote:
+        "追加の移動費なしでチャッツウッド、チャッツウッドウェスト、ローズビル、ウィロビーにサービス提供。",
+      localReview: {
+        ...suburbPages[1].localReview,
+        text: "古い貯湯タンクが夜中に破裂しました。ADP Plumbingは昼前に新しいRinnaiガス瞬間給湯器を設置しました。完璧な後片付けととても丁寧な技術者でした。",
+      },
+    },
+    {
+      ...suburbPages[2], // Bondi
+      region: "イースタン・サバーブ",
+      responseEta: "30分",
+      metaTitle: "ボンダイ（2026）緊急配管工 | 塩害腐食と排水管の専門家",
+      metaDescription:
+        "ボンダイ2026の24時間365日ローカル配管工。海岸の塩害による配管腐食、アパートの排水管詰まり、緊急漏水修理の専門家。固定事前価格。",
+      badge: "イースタン・サバーブ移動ユニット • 到着まで30分",
+      heroTitle: "ボンダイ＆ボンダイビーチの当日対応海岸配管工",
+      heroDescription:
+        "海岸の塩分と老朽化したテラスハウスの配管には特別なケアが必要です。ボンダイ（2026）の配管工は、船舶グレードの継手、高圧ジェッター、サーマル漏水カメラを装備して初回訪問で問題を解決します。",
+      localAngleTitle: "ボンダイの海岸の塩分と歴史あるテラスのために構築",
+      localAngleDescription:
+        "ボンダイビーチやキャンベルパレード周辺の物件は、屋外の銅管、ガス管、給湯バルブの腐食が加速します。私たちは海岸の条件下で長持ちするように設計された耐食性継手を設置します。",
+      commonLocalIssues: [
+        "塩害で腐食した屋外給湯バルブと銅管",
+        "海岸沿いの低層アパートのキッチン＆バスルームのスタック詰まり",
+        "緊急破裂管の遮断とストラタコンプライアンスレポート",
+      ],
+      localLandmarkNote:
+        "ボンダイビーチ、ノースボンダイ、ボンダイジャンクション、タマラマ全域で迅速なローカル対応。",
+      localReview: {
+        ...suburbPages[2].localReview,
+        text: "塩害で屋外の水道メーターのバルブが錆びました。ADP Plumbingは30分以内に到着し、腐食した銅管部分を船舶グレードの真鍮に交換し、汚れを一切残しませんでした。",
+      },
+    },
+    {
+      ...suburbPages[3], // Cronulla
+      region: "サザーランド・シャイア",
+      responseEta: "45分",
+      metaTitle: "クロヌラ（2230）配管工 | 24時間365日排水管詰まりとガス設備",
+      metaDescription:
+        "クロヌラ2230の信頼できるサザーランドシャイア配管工。雨水管の詰まり、ガスBBQ口、緊急配管修理の事前固定価格。",
+      badge: "サザーランド・シャイア迅速ユニット • 到着まで45分",
+      heroTitle: "クロヌラ＆シャイアの信頼できるローカル配管工",
+      heroDescription:
+        "エスプラネード近くのビーチサイドユニットからサウスクロヌラ（2230）のファミリーホームまで、ADP Plumbingは隠れた出張費なしで正直で時間通りの配管およびガス設備サービスを提供します。",
+      localAngleTitle: "クロヌラの住宅向け雨水、下水、ガスの専門家",
+      localAngleDescription:
+        "海岸の激しい豪雨や砂質土壌の移動により、クロヌラの住宅用雨水桝や下水接続部がすぐに溢れることがあります。砂や根の詰まりを迅速に除去し、屋外ガス設備を認定します。",
+      commonLocalIssues: [
+        "砂で詰まった雨水管と海岸の洪水防止桝の清掃",
+        "屋外エンターテインメント用の公認天然ガス＆LPG口金具の設置",
+        "トイレのタンク漏れ、蛇口のアップグレード、屋根樋の修理",
+      ],
+      localLandmarkNote:
+        "固定事前見積もりでクロヌラ、ウールーウェア、カリンバ、ミランダをカバー。",
+      localReview: {
+        ...suburbPages[3].localReview,
+        text: "本当に時間通りに来てくれる正直な人。砂で詰まった雨水排水管を清掃し、裏デッキに新しいガス口を一度の訪問で設置。適正価格と最高の仕事ぶり。",
+      },
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────
+  // CHINESE (ZH)
+  // ─────────────────────────────────────────────────────────────
+  zh: [
+    {
+      ...suburbPages[0], // Parramatta
+      region: "西悉尼",
+      responseEta: "35分钟",
+      metaTitle: "Parramatta (2150) 24/7 紧急水管工 | ADP Plumbing",
+      metaDescription:
+        "Parramatta 2150 快速持证水管工。当日下水道疏通、爆管维修和热水器安装，$0上门费。",
+      badge: "Parramatta本地专车待命 • 35分钟到达",
+      heroTitle: "Parramatta值得信赖的24/7紧急水管工",
+      heroDescription:
+        "在Parramatta (2150)遇到下水道堵塞、水管爆裂或没有热水？我们的西悉尼水管工程车停靠在Church Street附近，可提供当日快速派遣和透明统一价格。",
+      localAngleTitle: "专为Parramatta住宅和公寓量身定制的管道解决方案",
+      localAngleDescription:
+        "从Parramatta Park附近的传统联邦小屋到河滨的高层公寓，我们非常了解2150地区常见的管道、树根入侵和物业水压问题。",
+      commonLocalIssues: [
+        "North Parramatta周边老旧粘土污水管中的树根入侵",
+        "高层公寓中符合物业规定的热水系统更换",
+        "高水压阀门调节与爆裂软管维修",
+      ],
+      localLandmarkNote:
+        "快速派遣覆盖Parramatta CBD、North Parramatta、Harris Park和Westmead。",
+      localReview: {
+        ...suburbPages[0].localReview,
+        text: "周日早上我们后院的排水管溢出了。ADP Plumbing在30分钟内到达，将CCTV摄像头放入管道，用高压水射流清除了树根，并收取了与报价完全一致的统一价格。",
+      },
+    },
+    {
+      ...suburbPages[1], // Chatswood
+      region: "下北岸",
+      responseEta: "40分钟",
+      metaTitle: "Chatswood (2067) 持证水管工 | 热水器与下水道堵塞",
+      metaDescription:
+        "在Chatswood 2067需要紧急水管工？ADP Plumbing在北岸提供透明的固定价格管道内衬、燃气安装和热水维修服务。",
+      badge: "下北岸派遣 • 40分钟到达",
+      heroTitle: "Chatswood快速、整洁的住宅水管工",
+      heroDescription:
+        "为Chatswood (2067)的房主和物业经理提供精准漏水检测、即热式热水器升级和非开挖管道内衬——100%预报价保证。",
+      localAngleTitle: "无需挖开花园即可保护北岸房产",
+      localAngleDescription:
+        "Chatswood绿树成荫的街道和成熟住宅容易遭受树根损坏的雨水管和污水管问题。我们使用非开挖管道内衬来修复破损的排水管，无需挖开您的车道或景观庭院。",
+      commonLocalIssues: [
+        "针对树根损坏的陶土管道的非开挖管道内衬",
+        "Rheem和Rinnai即热式燃气热水器安装",
+        "瓷砖浴室墙后的声学热成像漏水检测",
+      ],
+      localLandmarkNote:
+        "服务Chatswood、Chatswood West、Roseville和Willoughby，零差旅附加费。",
+      localReview: {
+        ...suburbPages[1].localReview,
+        text: "我们的旧储水罐夜间爆裂。ADP Plumbing在午餐前安装了一台新的Rinnai燃气即热式热水器。清理一尘不染，技师非常有礼貌。",
+      },
+    },
+    {
+      ...suburbPages[2], // Bondi
+      region: "东区",
+      responseEta: "30分钟",
+      metaTitle: "Bondi (2026) 紧急水管工 | 盐雾腐蚀与下水道专家",
+      metaDescription:
+        "Bondi 2026的24/7本地水管工。擅长处理海岸盐雾腐蚀管道、公寓下水道堵塞及紧急漏水维修，提供固定预报价。",
+      badge: "东区移动小队 • 30分钟到达",
+      heroTitle: "Bondi与Bondi Beach当日海岸水管工",
+      heroDescription:
+        "海岸盐雾和老化露台管道需要专门处理。我们的Bondi (2026)水管工配备船用级配件、高压水射流机和热成像漏水摄像头，首次上门即可解决问题。",
+      localAngleTitle: "专为Bondi海岸盐雾与历史露台打造",
+      localAngleDescription:
+        "Bondi Beach和Campbell Parade附近的房产，其室外铜管、燃气管和热水阀会加速腐蚀。我们安装专为沿海条件设计的耐腐蚀配件。",
+      commonLocalIssues: [
+        "盐雾腐蚀的室外热水调温阀和铜管",
+        "沿海无电梯公寓的厨房与浴室管道堵塞",
+        "紧急爆管关闭与物业合规报告",
+      ],
+      localLandmarkNote:
+        "在Bondi Beach、North Bondi、Bondi Junction和Tamarama提供快速本地响应。",
+      localReview: {
+        ...suburbPages[2].localReview,
+        text: "盐雾腐蚀了我们的户外主水阀。ADP Plumbing不到30分钟就到达，用船用级黄铜更换了腐蚀的铜段，没有留下任何脏乱。",
+      },
+    },
+    {
+      ...suburbPages[3], // Cronulla
+      region: "萨瑟兰郡",
+      responseEta: "45分钟",
+      metaTitle: "Cronulla (2230) 水管工 | 24/7 下水道疏通与燃气安装",
+      metaDescription:
+        "Cronulla 2230可靠的萨瑟兰郡水管工。雨水管疏通、燃气烧烤接口和紧急水管维修，提供预先统一价格。",
+      badge: "萨瑟兰郡快速小队 • 45分钟到达",
+      heroTitle: "Cronulla与The Shire可靠的本地水管工",
+      heroDescription:
+        "从The Esplanade附近的海滨公寓到South Cronulla (2230)的家庭住宅，ADP Plumbing提供诚实、准时且无隐藏上门费的水管和燃气安装服务。",
+      localAngleTitle: "Cronulla住宅的雨水、污水与燃气专家",
+      localAngleDescription:
+        "强烈的沿海暴雨和沙质土壤移位会迅速淹没Cronulla的住宅雨水坑和污水管接头。我们能快速清除沙子和树根堵塞，并为户外燃气安装出具认证。",
+      commonLocalIssues: [
+        "沙子堵塞的雨水管及沿海防洪坑清理",
+        "用于户外娱乐的持证天然气和LPG接口安装",
+        "马桶水箱漏水、水龙头升级及屋顶落水管维修",
+      ],
+      localLandmarkNote:
+        "覆盖Cronulla、Woolooware、Caringbah和Miranda，提供固定预报价。",
+      localReview: {
+        ...suburbPages[3].localReview,
+        text: "诚实的人，真的准时到达。一次上门就清理了我们被沙子堵塞的雨水渠，并在后甲板安装了新的燃气接口。价格公道，工艺一流。",
+      },
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────
+  // THAI (TH)
+  // ─────────────────────────────────────────────────────────────
+  th: [
+    {
+      ...suburbPages[0], // Parramatta
+      region: "ซิดนีย์ตะวันตก",
+      responseEta: "35 นาที",
+      metaTitle: "ช่างประปาฉุกเฉิน Parramatta (2150) 24/7 | ADP Plumbing",
+      metaDescription:
+        "ช่างประปาที่มีใบอนุญาตรวดเร็วใน Parramatta 2150 รับจ้างล้างท่อตัน ซ่อมท่อแตก และติดตั้งน้ำร้อนภายในวันเดียว ไม่มีค่าบริการนอกสถานที่",
+      badge: "รถตู้ประจำ Parramatta พร้อมให้บริการ • ETA 35 นาที",
+      heroTitle: "ช่างประปาฉุกเฉิน 24/7 ที่เชื่อถือได้ใน Parramatta",
+      heroDescription:
+        "มีปัญหาท่อระบายน้ำตัน ท่อแตก หรือไม่มีน้ำร้อนใน Parramatta (2150)? รถบรรทุกช่างประปาซิดนีย์ตะวันตกของเราจอดอยู่ห่างจาก Church Street ไม่กี่นาที พร้อมให้บริการจัดส่งด่วนในวันเดียวกันและราคาคงที่",
+      localAngleTitle: "โซลูชันระบบประปาสำหรับบ้านและคอนโดใน Parramatta",
+      localAngleDescription:
+        "ตั้งแต่บ้านสไตล์เฟเดอเรชันใกล้ Parramatta Park ไปจนถึงอพาร์ตเมนต์สูงตามริมแม่น้ำ เรารู้จักระบบท่อ การบุกรุกของรากไม้ และปัญหาแรงดันน้ำในอาคารชุดที่พบบ่อยในรหัสไปรษณีย์ 2150",
+      commonLocalIssues: [
+        "รากไม้บุกรุกท่อระบายน้ำดินเหนียวเก่าแถบ North Parramatta",
+        "การเปลี่ยนเครื่องทำน้ำร้อนในคอนโดที่ตรงตามข้อกำหนดของนิติบุคคล",
+        "การปรับวาล์วแรงดันน้ำสูง & การซ่อมสายยางที่แตก",
+      ],
+      localLandmarkNote:
+        "จัดส่งอย่างรวดเร็วครอบคลุม Parramatta CBD, North Parramatta, Harris Park และ Westmead",
+      localReview: {
+        ...suburbPages[0].localReview,
+        text: "ท่อระบายน้ำหลังบ้านของเราเอ่อล้นในเช้าวันอาทิตย์ ADP Plumbing มาถึงใน 30 นาที สอดกล้อง CCTV กำจัดรากไม้ด้วย hydro-jetter และคิดค่าบริการคงที่ตามที่เสนอราคาไว้",
+      },
+    },
+    {
+      ...suburbPages[1], // Chatswood
+      region: "โลเวอร์นอร์ธชอร์",
+      responseEta: "40 นาที",
+      metaTitle: "ช่างประปาที่มีใบอนุญาต Chatswood (2067) | น้ำร้อนและท่อตัน",
+      metaDescription:
+        "ต้องการช่างประปาฉุกเฉินใน Chatswood 2067? ADP Plumbing ให้บริการบุท่อแบบไม่ขุด ติดตั้งแก๊ส และซ่อมน้ำร้อนในราคาคงที่ทั่ว North Shore",
+      badge: "จัดส่ง Lower North Shore • ETA 40 นาที",
+      heroTitle: "ช่างประปาที่อยู่อาศัยที่รวดเร็วและสะอาดใน Chatswood",
+      heroDescription:
+        "ให้บริการเจ้าของบ้านและผู้จัดการอาคารใน Chatswood (2067) ด้วยการตรวจจับการรั่วซึมที่แม่นยำ การอัปเกรดเครื่องทำน้ำร้อนแบบต่อเนื่อง และการบุท่อแบบไม่ขุด—พร้อมการรับประกันราคา 100%",
+      localAngleTitle: "ปกป้องทรัพย์สินใน North Shore โดยไม่ต้องขุดสวน",
+      localAngleDescription:
+        "ถนนที่เต็มไปด้วยต้นไม้และบ้านเก่าแก่ใน Chatswood มีแนวโน้มที่ท่อน้ำฝนและท่อระบายน้ำจะเสียหายจากรากไม้ เราจึงใช้การบุท่อแบบไม่ขุดเพื่อซ่อมแซมท่อระบายน้ำโดยไม่ต้องขุดถนนหรือสวนของคุณ",
+      commonLocalIssues: [
+        "การบุท่อแบบไม่ขุดสำหรับท่อดินเผาที่เสียหายจากรากไม้",
+        "ติดตั้งเครื่องทำน้ำร้อนแก๊สแบบต่อเนื่อง Rheem และ Rinnai",
+        "ตรวจจับการรั่วซึมด้วยเสียงและความร้อนหลังผนังห้องน้ำที่ปูกระเบื้อง",
+      ],
+      localLandmarkNote:
+        "ให้บริการ Chatswood, Chatswood West, Roseville และ Willoughby โดยไม่มีค่าใช้จ่ายในการเดินทาง",
+      localReview: {
+        ...suburbPages[1].localReview,
+        text: "ถังเก็บน้ำเก่าของเราแตกในตอนกลางคืน ADP Plumbing ติดตั้งเครื่องทำน้ำร้อนแก๊สแบบต่อเนื่อง Rinnai ใหม่ก่อนเที่ยง ทำความสะอาดอย่างไร้ที่ติและช่างสุภาพมาก",
+      },
+    },
+    {
+      ...suburbPages[2], // Bondi
+      region: "อีสเทิร์นซับเบิร์บส์",
+      responseEta: "30 นาที",
+      metaTitle:
+        "ช่างประปาฉุกเฉิน Bondi (2026) | ผู้เชี่ยวชาญการกัดกร่อนจากไอเค็มและท่อ",
+      metaDescription:
+        "ช่างประปาท้องถิ่น 24/7 ใน Bondi 2026 ผู้เชี่ยวชาญด้านท่อที่ผุกร่อนจากไอเค็ม ท่ออุดตันในอพาร์ตเมนต์ และซ่อมแซมการรั่วซึมในราคาคงที่",
+      badge: "หน่วยเคลื่อนที่ Eastern Suburbs • ETA 30 นาที",
+      heroTitle: "ช่างประปาชายฝั่งบริการวันเดียวกันใน Bondi และ Bondi Beach",
+      heroDescription:
+        "ไอเค็มจากชายฝั่งและระบบท่อระเบียงเก่าแก่ต้องการการดูแลเฉพาะด้าน ช่างประปา Bondi (2026) ของเรามาพร้อมข้อต่อทองเหลืองระดับmarine เครื่องฉีดน้ำแรงดันสูง และกล้องความร้อนเพื่อแก้ไขปัญหาในการเข้าครั้งแรก",
+      localAngleTitle: "สร้างมาเพื่อไอเค็มชายฝั่งและระเบียงเก่าแก่ของ Bondi",
+      localAngleDescription:
+        "ทรัพย์สินใกล้ Bondi Beach และ Campbell Parade จะมีการกัดกร่อนอย่างรวดเร็วบนท่อทองแดงภายนอก ท่อแก๊ส และวาล์วน้ำร้อน เราจึงติดตั้งข้อต่อที่ทนต่อการกัดกร่อนซึ่งออกแบบมาให้ทนทานต่อสภาพชายฝั่ง",
+      commonLocalIssues: [
+        "วาล์วผสมน้ำร้อนและท่อทองแดงภายนอกที่ผุกร่อนจากไอเค็ม",
+        "ท่ออุดตันในห้องครัวและห้องน้ำของอพาร์ตเมนต์ติดชายฝั่ง",
+        "ปิดวาล์วท่อแตกฉุกเฉินและรายงานการปฏิบัติตามข้อกำหนดของนิติบุคคล",
+      ],
+      localLandmarkNote:
+        "ตอบสนองอย่างรวดเร็วทั่ว Bondi Beach, North Bondi, Bondi Junction และ Tamarama",
+      localReview: {
+        ...suburbPages[2].localReview,
+        text: "ไอเค็มกัดกร่อนวาล์วน้ำหลักกลางแจ้งของเรา ADP Plumbing มาถึงในเวลาไม่ถึง 30 นาที เปลี่ยนส่วนทองแดงที่กัดกร่อนด้วยทองเหลืองระดับmarine และไม่ทิ้งความสกปรกไว้เลย",
+      },
+    },
+    {
+      ...suburbPages[3], // Cronulla
+      region: "ซัทเทอร์แลนด์ไชร์",
+      responseEta: "45 นาที",
+      metaTitle: "ช่างประปา Cronulla (2230) | ท่อตันและติดตั้งแก๊ส 24/7",
+      metaDescription:
+        "ช่างประปา Sutherland Shire ที่เชื่อถือได้ใน Cronulla 2230 ราคาคงที่สำหรับท่อระบายน้ำฝนอุดตัน จุดบาร์บีคิวแก๊ส และซ่อมประปาฉุกเฉิน",
+      badge: "หน่วยด่วน Sutherland Shire • ETA 45 นาที",
+      heroTitle: "ช่างประปาท้องถิ่นที่เชื่อถือได้ใน Cronulla และ The Shire",
+      heroDescription:
+        "ตั้งแต่คอนโดริมหาดใกล้ The Esplanade ไปจนถึงบ้านครอบครัวใน South Cronulla (2230) ADP Plumbing มอบบริการประปาและติดตั้งแก๊สที่ซื่อสัตย์ตรงเวลาโดยไม่มีค่าบริการนอกสถานที่แอบแฝง",
+      localAngleTitle:
+        "ผู้เชี่ยวชาญน้ำฝน ท่อระบายน้ำ และแก๊สสำหรับบ้านใน Cronulla",
+      localAngleDescription:
+        "ฝนตกหนักตามชายฝั่งและการเคลื่อนตัวของดินทรายสามารถทำให้น้ำท่วมบ่อพักน้ำฝนและทางแยกท่อระบายน้ำใน Cronulla ได้อย่างรวดเร็ว เรากำจัดสิ่งอุดตันจากทรายและรากไม้ได้อย่างรวดเร็วและรับรองการติดตั้งแก๊สภายนอก",
+      commonLocalIssues: [
+        "ท่อระบายน้ำฝนที่ถูกทรายอุดตันและการล้างบ่อป้องกันน้ำท่วมชายฝั่ง",
+        "การติดตั้งจุดเชื่อมต่อแก๊สธรรมชาติและ LPG ที่มีใบอนุญาตสำหรับพื้นที่สังสรรค์กลางแจ้ง",
+        "ถังน้ำในโถส้วมรั่ว อัปเกรดก๊อกน้ำ และซ่อมท่อระบายน้ำฝนบนหลังคา",
+      ],
+      localLandmarkNote:
+        "ครอบคลุม Cronulla, Woolooware, Caringbah และ Miranda ด้วยใบเสนอราคาคงที่",
+      localReview: {
+        ...suburbPages[3].localReview,
+        text: "คนซื่อสัตย์ที่มาตรงเวลาจริงๆ ล้างท่อระบายน้ำฝนที่เต็มไปด้วยทรายและติดตั้งจุดแก๊สใหม่บนดาดฟ้าหลังบ้านในการเข้าครั้งเดียว ราคายุติธรรมและฝีมือชั้นยอด",
+      },
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────
+  // VIETNAMESE (VI)
+  // ─────────────────────────────────────────────────────────────
+  vi: [
+    {
+      ...suburbPages[0], // Parramatta
+      region: "Tây Sydney",
+      responseEta: "35 Phút",
+      metaTitle:
+        "Thợ sửa ống nước khẩn cấp 24/7 Parramatta (2150) | ADP Plumbing",
+      metaDescription:
+        "Thợ sửa ống nước có giấy phép nhanh chóng tại Parramatta 2150. Thông tắc cống trong ngày, sửa ống vỡ và lắp đặt nước nóng với phí gọi $0.",
+      badge: "Xe Parramatta trực chiến • Có mặt sau 35 phút",
+      heroTitle: "Thợ sửa ống nước khẩn cấp 24/7 đáng tin cậy tại Parramatta",
+      heroDescription:
+        "Gặp sự cố tắc cống, vỡ ống nước hay mất nước nóng tại Parramatta (2150)? Xe sửa ống nước khu vực Tây Sydney của chúng tôi đóng quân cách Church Street vài phút, sẵn sàng điều phối trong ngày với giá cố định.",
+      localAngleTitle:
+        "Giải pháp ống nước thiết kế riêng cho nhà & căn hộ Parramatta",
+      localAngleDescription:
+        "Từ những ngôi nhà cổ kính gần công viên Parramatta đến các căn hộ cao tầng dọc bờ sông, chúng tôi hiểu rõ hệ thống đường ống, sự xâm nhập của rễ cây và các vấn đề áp lực nước thường gặp tại khu vực 2150.",
+      commonLocalIssues: [
+        "Rễ cây xâm nhập đường ống cống bằng đất sét cũ quanh North Parramatta",
+        "Thay thế hệ thống nước nóng tuân thủ quy định tòa nhà tại chung cư cao tầng",
+        "Điều chỉnh van áp lực nước cao & sửa chữa ống mềm bị vỡ",
+      ],
+      localLandmarkNote:
+        "Điều phối nhanh chóng bao gồm Parramatta CBD, North Parramatta, Harris Park và Westmead.",
+      localReview: {
+        ...suburbPages[0].localReview,
+        text: "Cống sân sau của chúng tôi tràn vào sáng Chủ nhật. ADP Plumbing đến trong 30 phút, đưa camera CCTV xuống đường ống, dọn rễ cây bằng máy phun áp lực và tính đúng giá cố định đã báo.",
+      },
+    },
+    {
+      ...suburbPages[1], // Chatswood
+      region: "Hạ Bắc Shore",
+      responseEta: "40 Phút",
+      metaTitle:
+        "Thợ sửa ống nước có giấy phép Chatswood (2067) | Nước nóng & Cống tắc",
+      metaDescription:
+        "Cần thợ sửa ống nước khẩn cấp tại Chatswood 2067? ADP Plumbing cung cấp dịch vụ lót ống, lắp đặt gas và sửa nước nóng với giá cố định trên toàn North Shore.",
+      badge: "Điều phối Hạ Bắc Shore • Có mặt sau 40 phút",
+      heroTitle: "Thợ sửa ống nước dân dụng nhanh chóng, sạch sẽ tại Chatswood",
+      heroDescription:
+        "Phục vụ chủ nhà và quản lý tòa nhà tại Chatswood (2067) với dịch vụ phát hiện rò rỉ chính xác, nâng cấp hệ thống nước nóng liên tục và lót ống không đào—được bảo đảm bằng giá cố định 100%.",
+      localAngleTitle: "Bảo vệ tài sản Bắc Shore mà không cần đào khu vườn",
+      localAngleDescription:
+        "Những con phố nhiều cây xanh và những ngôi nhà lâu đời ở Chatswood dễ bị rễ cây làm hỏng đường ống nước mưa và cống. Chúng tôi sử dụng phương pháp lót ống không đào để khôi phục cống bị hỏng mà không cần đào đường lái xe hay sân vườn của bạn.",
+      commonLocalIssues: [
+        "Lót ống không đào cho đường ống đất nung bị rễ cây làm hỏng",
+        "Lắp đặt hệ thống nước nóng gas liên tục Rheem & Rinnai",
+        "Phát hiện rò rỉ nhiệt âm thanh sau tường phòng tắm ốp gạch",
+      ],
+      localLandmarkNote:
+        "Phục vụ Chatswood, Chatswood West, Roseville và Willoughby với chi phí di chuyển bằng không.",
+      localReview: {
+        ...suburbPages[1].localReview,
+        text: "Bình chứa cũ của chúng tôi vỡ qua đêm. ADP Plumbing đã lắp đặt bình gas liên tục Rinnai mới trước giờ ăn trưa. Dọn dẹp sạch sẽ và kỹ thuật viên rất lịch sự.",
+      },
+    },
+    {
+      ...suburbPages[2], // Bondi
+      region: "Vùng Ngoại ô Phía Đông",
+      responseEta: "30 Phút",
+      metaTitle:
+        "Thợ sửa ống nước khẩn cấp Bondi (2026) | Chuyên gia ăn mòn muối biển & Cống",
+      metaDescription:
+        "Thợ sửa ống nước địa phương 24/7 tại Bondi 2026. Chuyên gia xử lý đường ống bị ăn mòn do muối biển, thông tắc cống chung cư và sửa rò rỉ khẩn cấp với giá cố định.",
+      badge: "Đơn vị lưu động Đông Suburbs • Có mặt sau 30 phút",
+      heroTitle: "Thợ sửa ống nước ven biển trong ngày tại Bondi & Bondi Beach",
+      heroDescription:
+        "Không khí muối biển và hệ thống ống nước cũ kỹ của các ngôi nhà ven biển đòi hỏi sự chăm sóc đặc biệt. Thợ sửa ống nước Bondi (2026) của chúng tôi đến với phụ kiện đồng thau cấp biển, máy phun áp lực cao và camera nhiệt để khắc phục sự cố ngay lần đầu.",
+      localAngleTitle:
+        "Được thiết kế cho không khí muối biển và nhà phố cổ ở Bondi",
+      localAngleDescription:
+        "Các bất động sản gần Bondi Beach và Campbell Parade bị ăn mòn nhanh chóng trên ống đồng ngoài trời, đường ống gas và van nước nóng. Chúng tôi lắp đặt các phụ kiện chống ăn mòn được thiết kế để tồn tại lâu dài trong điều kiện ven biển.",
+      commonLocalIssues: [
+        "Van điều hòa nước nóng ngoài trời và ống đồng bị ăn mòn do muối biển",
+        "Tắc nghẽn ống xả nhà bếp & phòng tắm tại các chung cư ven biển",
+        "Ngắt ống vỡ khẩn cấp và báo cáo tuân thủ quy định tòa nhà",
+      ],
+      localLandmarkNote:
+        "Phản hồi địa phương nhanh chóng trên khắp Bondi Beach, North Bondi, Bondi Junction và Tamarama.",
+      localReview: {
+        ...suburbPages[2].localReview,
+        text: "Không khí mặn đã ăn mòn van nước chính ngoài trời của chúng tôi. ADP Plumbing đến trong vòng chưa đầy 30 phút, thay phần đồng bị ăn mòn bằng đồng thau cấp biển và không để lại chút bừa bộn nào.",
+      },
+    },
+    {
+      ...suburbPages[3], // Cronulla
+      region: "Sutherland Shire",
+      responseEta: "45 Phút",
+      metaTitle:
+        "Thợ sửa ống nước Cronulla (2230) | Thông tắc cống & Lắp đặt Gas 24/7",
+      metaDescription:
+        "Thợ sửa ống nước Sutherland Shire đáng tin cậy tại Cronulla 2230. Giá cố định cho thông tắc cống thoát nước mưa, điểm BBQ gas và sửa chữa ống nước khẩn cấp.",
+      badge: "Đơn vị khẩn cấp Sutherland Shire • Có mặt sau 45 phút",
+      heroTitle:
+        "Thợ sửa ống nước địa phương đáng tin cậy tại Cronulla & The Shire",
+      heroDescription:
+        "Từ các căn hộ ven biển gần The Esplanade đến nhà ở gia đình tại South Cronulla (2230), ADP Plumbing mang đến dịch vụ sửa ống nước và lắp đặt gas trung thực, đúng giờ với chi phí gọi không ẩn.",
+      localAngleTitle:
+        "Chuyên gia nước mưa, cống thoát nước & gas cho nhà ở Cronulla",
+      localAngleDescription:
+        "Mưa lớn ven biển và sự dịch chuyển của đất cát có thể nhanh chóng làm quá tải các hố ga nước mưa và điểm nối cống tại Cronulla. Chúng tôi nhanh chóng dọn sạch cát và rễ cây tắc nghẽn, đồng thời chứng nhận lắp đặt gas ngoài trời.",
+      commonLocalIssues: [
+        "Thông tắc cống thoát nước mưa bị tắc cát và vệ sinh hố ga chống ngập ven biển",
+        "Lắp đặt đầu nối gas tự nhiên & LPG có giấy phép cho khu vực giải trí ngoài trời",
+        "Rò rỉ bồn cầu, nâng cấp vòi nước và sửa ống thoát nước mái nhà",
+      ],
+      localLandmarkNote:
+        "Bao gồm Cronulla, Woolooware, Caringbah và Miranda với báo giá cố định trước.",
+      localReview: {
+        ...suburbPages[3].localReview,
+        text: "Người đàn ông trung thực thực sự đến đúng giờ. Dọn cống thoát nước mưa bị tắc cát và lắp điểm gas mới trên sàn gỗ sau nhà trong một lần đến. Giá hợp lý và tay nghề hàng đầu.",
+      },
+    },
+  ],
+};
