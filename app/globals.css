@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Palet: porselen dingin + biru laut dalam (warna air), aksen tembaga (bahan pipa) */
+@theme {
+  --color-porcelain: #f4f7f7;
+  --color-surface: #ffffff;
+  --color-ink: #13232a;
+  --color-muted: #5b6d72;
+  --color-line: #d8e1e3;
+  --color-mist: #e6eeef;
+  --color-marine: #0e2b31;
+  --color-marine-hover: #15414a;
+  --color-marine-deep: #0a2025;
+  --color-marine-muted: #9db3b7;
+  --color-copper: #a4622f;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:
+    var(--font-manrope), ui-sans-serif, system-ui, "Hiragino Sans",
+    "PingFang SC", "Noto Sans JP", "Noto Sans SC", "Noto Sans Thai", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-porcelain);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-copper);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-marine);
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 40rem) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Judul besar: weight tipis, tracking rapat */
+@utility heading-light {
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
 }
